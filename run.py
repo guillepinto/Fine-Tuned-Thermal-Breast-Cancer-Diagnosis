@@ -38,7 +38,7 @@ def parse_args():
 def model_pipeline(hyperparameters):
 
     # tell wandb to get started
-    with wandb.init(project="dip-project", config=hyperparameters):
+    with wandb.init(project="hocv-project", entity="ai-uis", config=hyperparameters):
         # access all HPs through wandb.config, so logging matches execution!
         config = wandb.config
 

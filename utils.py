@@ -89,7 +89,7 @@ def make(config, fold=None):
     return model, train_loader, test_loader, criterion, optimizer, accuracy_fn, f1_score_fn, recall_fn, precision_fn, epochs
 
 TEAM = 'ai-uis'
-PROJECT = 'dmr-ir-fine-tuning'
+PROJECT = 'hocv-project'
 
 # Function to save checkpoints
 def save_checkpoint(net, optimizer, epoch, loss, best_loss):
