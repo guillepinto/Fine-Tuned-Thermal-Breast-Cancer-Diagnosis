@@ -8,9 +8,9 @@ from utils import make, DEVICE
 from train import train
 
 default_config = SimpleNamespace(
-    epochs=3,
+    epochs=20,
     classes=1,
-    batch_size=32,
+    batch_size=512,
     learning_rate=0.001,
     normalize=True,
     augmented=False,
