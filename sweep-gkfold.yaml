@@ -1,0 +1,23 @@
+program: run.py
+method: grid
+
+parameters:
+  learning_rate:
+    values: [0.001, 0.0001, 0.00001]
+  architecture:
+    values:
+      - vit
+      - resnet
+      - xception
+  batch_size:
+    values: [32]
+  fine_tune:
+    values:
+      - classifier+conv1
+      - full
+  normalize:
+    values: [True]
+  augmented:
+    values: [True]
+  n_channels:
+    values: [1]
