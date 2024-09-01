@@ -20,7 +20,8 @@ default_config = SimpleNamespace(
     dataset="ThermalBreastCancer",
     architecture="vit",
     fine_tune='classifier',
-    n_channels=3)
+    n_channels=3,
+    init_fold=1)
 
 def parse_args():
     "Override default argments"
@@ -33,6 +34,7 @@ def parse_args():
     argparser.add_argument('--architecture', type=str, default=default_config.architecture, help="architecture")
     argparser.add_argument('--fine_tune', type=str, default=default_config.fine_tune, help="fine_tune")
     argparser.add_argument('--n_channels', type=int, default=default_config.n_channels, help="n_channels")
+    argparser.add_argument('--init_fold', type=int, default=default_config.init_fold, help="initial fold")
     args = argparser.parse_args()
     vars(default_config).update(vars(args))
     return
@@ -94,7 +96,7 @@ def cross_validate(config):
     # to save the model at the current time
     # timestamp = datetime.now().strftime('%Y%m%d_%H%M')
 
-    for fold in range(1, 8):
+    for fold in range(config.init_fold, 8):
 
         reset_wandb_env() # Reinicio las variables de entorno en cada run
 

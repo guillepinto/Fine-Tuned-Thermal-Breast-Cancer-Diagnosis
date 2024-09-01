@@ -21,3 +21,5 @@ parameters:
     values: [True]
   n_channels:
     values: [1]
+  init_fold:
+    values: [1]
