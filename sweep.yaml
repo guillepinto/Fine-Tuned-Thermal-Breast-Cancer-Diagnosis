@@ -1,5 +1,5 @@
 program: run.py
-method: bayes
+method: grid
 
 metric:
   goal: maximize
@@ -14,11 +14,14 @@ parameters:
       - resnet
       - xception
   batch_size:
-    values: [256]
+    values: [32]
   fine_tune:
     values:
-      - classifier
+      - classifier+conv1
+      - full
   normalize:
     values: [True]
   augmented:
     values: [True]
+  n_channels:
+    values: [1]

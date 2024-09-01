@@ -3,7 +3,7 @@ import argparse, os
 from types import SimpleNamespace
 import wandb
 import numpy as np
-from utils import make
+from utils import make, DEVICE
 from train import train
 
 # File management
@@ -50,7 +50,7 @@ def model_pipeline(num, sweep_id, sweep_run_name, hyperparameters):
         # print(model)
 
         # and use them to train the model
-        test_accuracy, test_f1, test_recall, test_precision = train(model, train_loader, test_loader, criterion, optimizer, accuracy_fn, f1_score_fn, recall_fn, precision_fn, epochs)
+        test_accuracy, test_f1, test_recall, test_precision = train(model, train_loader, test_loader, criterion, optimizer, accuracy_fn, f1_score_fn, recall_fn, precision_fn, epochs, DEVICE)
 
     return test_accuracy, test_f1, test_recall, test_precision
 
