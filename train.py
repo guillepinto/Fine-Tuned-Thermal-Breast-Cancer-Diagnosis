@@ -3,7 +3,7 @@ import torch # 2.4.0
 import torch.nn as nn
 from tqdm import tqdm # 4.66.4
 import wandb # 0.17.1
-from test import test
+from predict import test
 
 # def train_log(loss, accuracy, step, current):
 #     """ Log the metrics for the current batch into wandb
