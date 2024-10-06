@@ -1,5 +1,5 @@
 program: run.py
-method: grid
+method: bayes
 
 metric:
   goal: maximize
