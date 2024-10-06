@@ -1,10 +1,7 @@
 from pathlib import Path
 
-from dotenv import load_dotenv
-
 # Load environment variables from .env file if it exists
 PROJ_ROOT = Path(__file__).resolve().parent
-load_dotenv(dotenv_path=PROJ_ROOT/'.env')
 
 print(f"PROJ_ROOT path is: {PROJ_ROOT}")
 
