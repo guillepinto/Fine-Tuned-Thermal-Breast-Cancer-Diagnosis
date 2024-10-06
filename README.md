@@ -83,8 +83,8 @@ We would like to thank the researchers and institutions that provided access to 
 If you find our code or paper useful, please cite:
 ```bibtex
 @techreport{pinto2024ThermalBC,
-  title={Diagnóstico del cáncer de mama con modelos de aprendizaje profundo mediante imágenes térmicas},
-  author={Pinto, Guillermo and Pimiento, Miguel and Rueda-Chacón, Hoover},
+  title={Detección de anomalías relacionadas con el cáncer de mama utilizando modelos de aprendizaje profundo e imágenes térmicas},
+  author={Pinto, Guillermo and Pimiento, Miguel and Diaz, Cristian and Rueda-Chacón, Hoover},
   institution={Preprint, Universidad Industrial de Santander},
   year={2024},
   note={Technical Report, available at \url{https://github.com/guillepinto/Fine-Tuned-Thermal-Breast-Cancer-Diagnosis}},
