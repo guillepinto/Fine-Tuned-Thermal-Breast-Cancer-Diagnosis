@@ -6,9 +6,8 @@ from torchvision.transforms import v2 # 0.19.0
 from sklearn.model_selection import GroupKFold # 1.4.2
 from PIL import Image, ImageOps # 10.3.0
 from preprocess import crop_breast
+from config import TRAIN_PATH, TEST_PATH
 
-TEST_PATH = "Imagens e Matrizes da Tese de Thiago Alves Elias da Silva/12 Novos Casos de Testes"
-TRAIN_PATH = "Imagens e Matrizes da Tese de Thiago Alves Elias da Silva/Desenvolvimento da Metodologia"
 
 def make_dataframe(train_path=TRAIN_PATH, test_path=TEST_PATH):
 
@@ -22,7 +21,6 @@ def make_dataframe(train_path=TRAIN_PATH, test_path=TEST_PATH):
   """
 
   # Primero consigo la ruta de imagenes y matrices para cada uno de los pacientes
-
   for category in os.listdir(test_path):
     # print(category)
     for patient in os.listdir(os.path.join(test_path, category)):

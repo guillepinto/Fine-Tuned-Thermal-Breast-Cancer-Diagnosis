@@ -1,4 +1,3 @@
-# wandb essentials
 import argparse
 from types import SimpleNamespace
 import wandb # 0.17.1
