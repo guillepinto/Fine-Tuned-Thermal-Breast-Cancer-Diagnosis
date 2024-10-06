@@ -3,13 +3,15 @@ from torch.nn import BCEWithLogitsLoss
 from torch.optim import Adam, SGD
 import torch # 2.4.0
 from networks import resnet, vit, xception
+from config import DEVICE
+import random
+import numpy as np
+import os
+
 from torchvision.transforms import v2 # 0.19.0
 # Pytorch metrics
 from torchmetrics.classification import BinaryAccuracy, BinaryF1Score, BinaryRecall, BinaryPrecision
 import wandb # 0.17.1
-
-# Device configuration
-DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 def make_transforms(augmentation=False):
 
@@ -136,3 +138,12 @@ def load_model_for_inference(model, run_id:str, device:str='cpu'):
   except Exception as e:
     print(f'Error loading checkpoint: {e}. Base model returned.')
     return model
+
+def seed_everything(seed=42):
+    random.seed(seed)
+    os.environ['PYTHONHASHSEED'] = str(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed(seed)
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = True  
