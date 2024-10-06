@@ -1,4 +1,3 @@
-# wandb essentials
 import argparse, os
 from types import SimpleNamespace
 import wandb
@@ -6,21 +5,18 @@ import numpy as np
 from utils import make, DEVICE
 from train import train
 
-# File management
-# from datetime import datetime
-
 default_config = SimpleNamespace(
     epochs=20,
     classes=1,
-    batch_size=512,
-    learning_rate=0.001,
+    batch_size=32,
+    learning_rate=0.00001,
     normalize=True,
-    augmented=False,
+    augmented=True,
     optimizer='adam',
     dataset="ThermalBreastCancer",
     architecture="vit",
-    fine_tune='classifier',
-    n_channels=3,
+    fine_tune='full',
+    n_channels=1,
     init_fold=1)
 
 def parse_args():
