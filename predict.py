@@ -2,7 +2,7 @@ import wandb
 import torch
 from utils import DEVICE
 
-def test(model, test_loader, loss_fn, accuracy_fn, f1_score_fn, recall_fn, precision_fn, epoch):
+def test(model, test_loader, loss_fn, accuracy_fn, f1_score_fn, recall_fn, precision_fn, epoch, wandb:bool=True):
     """ 
     Evaluate the model on the test dataset and log the performance metrics.
 
@@ -38,7 +38,8 @@ def test(model, test_loader, loss_fn, accuracy_fn, f1_score_fn, recall_fn, preci
         test_recall /= num_batches
         test_precision /= num_batches
 
-        wandb.log({"epoch": epoch+1, "test_accuracy": test_accuracy, "test_f1": test_f1,
+        if wandb:
+            wandb.log({"epoch": epoch+1, "test_accuracy": test_accuracy, "test_f1": test_f1,
                     "test_recall": test_recall, "test_precision": test_precision})
         print(f"test loss: {test_loss:.3f} accuracy: {test_accuracy:.3f} recall: {test_recall:.3f} precision: {test_precision:.3f} f1: {test_f1:.3f}")
 
