@@ -15,9 +15,7 @@ from pytorch_grad_cam import GradCAM, \
     LayerCAM, \
     FullGrad
 
-from pytorch_grad_cam import GuidedBackpropReLUModel
-from pytorch_grad_cam.utils.image import show_cam_on_image, \
-    preprocess_image
+from pytorch_grad_cam.utils.image import show_cam_on_image
 from pytorch_grad_cam.ablation_layer import AblationLayerVit
 
 
@@ -89,7 +87,7 @@ if __name__ == '__main__':
     """ Good Network """
     # checkpoint = torch.load('vit_32_full_00001/h7knv1x1_checkpoint.pth', map_location='cpu', weights_only=True)
     """ Bad Network """
-    checkpoint = torch.load('j3hibluq_bad_vit_16_full_0001.pth', map_location='cpu', weights_only=True)
+    checkpoint = torch.load('checkpoints/bad_models/j3hibluq_bad_vit_16_full_0001.pth', map_location='cpu', weights_only=True)
     model.load_state_dict(checkpoint['model_state_dict'])
     for param in model.parameters():
         param.requires_grad = True
