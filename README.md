@@ -87,12 +87,6 @@ python run_gkfold.py
 
 To facilitate the verification of our results, we provide our checkpoints for the `DMR-IR dataset`. Please download it from the following [link](https://huggingface.co/SemilleroCV/vit-base-patch16-224-thermal-breast-cancer).
 
-### Notebooks for inference
-
-We have created a [notebook](/notebooks/validation.ipynb) to perform the evaluation of the 7 checkpoints for our best model `vit-base-patch16-224`. 
-
-
-
 ## Results
 
 Our experiments showed that the Vision Transformer achieved an accuracy of 95.30% on the DMR-IR dataset, surpassing the results reported in prior works. The fine-tuned ViT model outperformed CNN-based models, although all models achieved competitive results, highlighting the potential of modern deep learning architectures in the field of medical imaging.
