@@ -102,7 +102,7 @@ def train(model: nn.Module, train_loader: torch.utils.data.DataLoader,
         if test_loss < best_loss:
             best_loss = test_loss
             patience = 7
-            save_checkpoint(model, optimizer, epoch, test_loss, best_loss)
+            save_checkpoint(model, optimizer, epoch+1, test_loss, best_loss)
         else:
           patience -= 1
           if patience == 0:
