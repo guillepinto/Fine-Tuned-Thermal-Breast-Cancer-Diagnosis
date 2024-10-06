@@ -54,11 +54,44 @@ Our experiments were conducted using ViT and CNN models, including:
 - ResNet
 - Xception
 
-For each model, transfer learning was applied using weights pretrained on ImageNet, and the models were fine-tuned for classification of thermographic breast cancer images.
+For each model, transfer learning was applied using weights pretrained on ImageNet, and the models were fine-tuned for classification of thermographic breast cancer images. Best models and their hyperparameters can be found in the following [notebook](/notebooks/bests-models.ipynb).
 
-## Checkpoints
+## Usage
 
-To facilitate the verification of our results, we provide our checkpoints for the `DMR-IR dataset`. Please download it from the following [link]()
+### Installation
+
+To to run the experiments and replicate the results, follow these steps:
+
+1. Install the Conda environment specified in the `Makefile`:
+```bash
+# This will create a Conda environment named `thermal-breast-cancer` with Python 3.10.
+make create_environment
+```
+   
+2. Activate the Conda environment:
+```bash
+conda activate thermal-breast-cancer
+```
+3. Install the Python dependencies specified in the `requirements.txt` file:
+```bash
+# This will install all the required libraries to run the experiments.
+make requirements
+```
+ 4. Run experiments
+```bash
+# This will run the experiments for the 7 folds with the best hyperparameters for ViT.
+python run_gkfold.py
+```
+
+### Checkpoints
+
+To facilitate the verification of our results, we provide our checkpoints for the `DMR-IR dataset`. Please download it from the following [link](https://huggingface.co/SemilleroCV/vit-base-patch16-224-thermal-breast-cancer).
+
+### Notebooks for inference
+
+We have created a [notebook](/notebooks/validation.ipynb) to perform the evaluation of the 7 checkpoints for our best model `vit-base-patch16-224`. 
+
+
 
 ## Results
 
