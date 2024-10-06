@@ -2,7 +2,8 @@ import argparse, os
 from types import SimpleNamespace
 import wandb
 import numpy as np
-from utils import make, DEVICE
+from utils import make, seed_everything
+from config import DEVICE
 from train import train
 
 default_config = SimpleNamespace(
@@ -36,6 +37,8 @@ def parse_args():
     return
 
 def model_pipeline(num, sweep_id, sweep_run_name, hyperparameters):
+
+    seed_everything()
 
     # tell wandb to get started
     run_name = f'{sweep_run_name}--{num}'

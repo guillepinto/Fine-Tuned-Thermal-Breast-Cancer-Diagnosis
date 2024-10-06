@@ -3,7 +3,8 @@ from types import SimpleNamespace
 import wandb # 0.17.1
 
 # Utils
-from utils import make, DEVICE
+from utils import make, seed_everything
+from config import DEVICE
 from train import train
 
 default_config = SimpleNamespace(
@@ -35,6 +36,8 @@ def parse_args():
     return
 
 def model_pipeline(hyperparameters):
+
+    seed_everything()
 
     # tell wandb to get started
     with wandb.init(project="hocv-project", entity="ai-uis", config=hyperparameters):
