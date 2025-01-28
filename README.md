@@ -10,7 +10,7 @@
 
 Research Group: [Hands-on Computer Vision](https://github.com/semilleroCV)
 
-### Paper | [Project Page](https://semillerocv.github.io/proyectos/proyecto7.html)
+### [Paper](assets/docs/paper.pdf) | [Project Page](https://semillerocv.github.io/proyectos/proyecto7.html)
 
 > **Abstract:** We developed a computer vision approach for the detection of breast cancer-related abnormalities using vision transformers and convolutional neural networks applied to the Database for Research Mastology with Infrared Image (DMR-IR) thermography dataset, achieving an accuracy of 95.30%. To our knowledge, this is the first work to implement cross-validation on this dataset, which reinforces the robustness of our best model compared to previous studies that did not apply this methodology. We implemented advanced visual attention techniques, such as GradCAM, to improve the interpretability of the predictions. This achievement underscores the potential of deep learning models in conjunction with thermograms, opening new opportunities for clinical applications in the early and efficient detection of breast cancer.
 
