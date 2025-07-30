@@ -1,3 +1,6 @@
+**[30/07/2025] Notice:** This repository has been archived as the project has evolved into a peer-review publication accepted at the IEEE Colombian Conference on Applications of Computational Intelligence – ColCACI 2025. The current research, which includes a multimodal vision-language transformer and improved results, is now available [here](https://github.com/semilleroCV/breastcatt).
+<div align="center">
+
 <div align="center">
   
 # Breast cancer diagnosis with deep learning models using thermal imaging
